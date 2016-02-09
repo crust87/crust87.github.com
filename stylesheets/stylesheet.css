@@ -158,10 +158,10 @@ a.button span {
 #download-tar-gz span {
   background: transparent url(../images/tar-gz-icon.png) 12px 50% no-repeat;
 }
-#view-on-github span {
+.view-on-github span {
   background: transparent url(../images/octocat-icon.png) 12px 50% no-repeat;
 }
-#view-on-github {
+.view-on-github {
   margin-right: 0;
 }
 
@@ -297,7 +297,10 @@ blockquote {
 ul li {
   list-style-position: inside;
   list-style: disc;
-  padding-left: 20px;
+  display: block;
+  float: left;
+  width: 100%;
+  margin-bottom: 40px;
 }
 
 ol li {
