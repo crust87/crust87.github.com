@@ -66,6 +66,8 @@ a:hover {
 header {
   padding-top: 35px;
   padding-bottom: 25px;
+  float: left;
+  width: 100%;
 }
 
 header h1 {
