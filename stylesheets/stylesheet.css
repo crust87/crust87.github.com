@@ -76,6 +76,8 @@ header h1 {
   line-height: 1.2;
   color: #303030;
   letter-spacing: -1px;
+  float: left;
+  margin-right: 40px;
 }
 
 header h2 {
