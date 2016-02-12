@@ -1,6 +1,6 @@
 $logContents = [
 	{
-		type: "Branche",
+		type: "Branch",
 		name: "Android-VideoCropView",
 		version: "1.2.1",
 		date: "2016. 02. 11.",
