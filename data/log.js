@@ -1,5 +1,13 @@
 $logContents = [
 	{
+		type: "Update",
+		name: "Android-VideoCropView(ExoPlayer)",
+		version: "1.3.0",
+		date: "2016. 02. 13.",
+		content: "Remove duplicated source code.<br/>Video position to be center when video load and change ratio.",
+		link: "https://github.com/crust87/Android-VideoCropView/tree/exoplayer"
+	},
+	{
 		type: "Branch",
 		name: "Android-VideoCropView",
 		version: "1.2.1",
