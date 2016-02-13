@@ -9,7 +9,7 @@ $logContents = [
 	},
 	{
 		type: "Branch",
-		name: "Android-VideoCropView",
+		name: "Android-VideoCropView(ExoPlayer)",
 		version: "1.2.1",
 		date: "2016. 02. 11.",
 		content: "Master branche has some problem with seeking video since using MediaPlayer class. so I decide to add another VideoCropView using ExoPlayer.<br/>This version is test version of VideoCropView using ExoPlayer. It no provide all of functions in ExoPlayer but It will soon. see <a href='https://github.com/google/ExoPlayer' target='_blank'>ExoPlayer</a> if you want to know more information.",
