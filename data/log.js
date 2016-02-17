@@ -3,7 +3,7 @@ $logContents = [
 		type: "Create",
 		name: "Android-ExoVideoView",
 		version: "1.0.0",
-		date: "2016. 02. 17."
+		date: "2016. 02. 17.",
 		content: "VideoView using ExoPlayer.<br/>This VideoView already used in <a href='https://github.com/crust87/Android-VideoCropView'>Android-VideoCropView</a> and <a href='https://github.com/crust87/Android-MotionPictureGenerator'>Android-MotionPictureGenerator</a>(this app doesn't work yet). I'm trying to migration ExoPlayer from 1.5.3 to 1.5.5, But there is something wrong. so this version of VideoView is using 1.5.3 and I will update to 1.5.5.",
 		link: "https://github.com/crust87/Android-ExoVideoView"
 	},
