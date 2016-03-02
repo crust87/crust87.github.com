@@ -1,5 +1,13 @@
 $logContents = [
 	{
+		type: "Update",
+		name: "Android-VideoCropView(ExoPlayer)",
+		version: "1.3.1",
+		date: "2016. 03. 01.",
+		content: "Add Attributes video rotation information, It was removed. You can get this attribute using getRotate() on every VideoCropView.",
+		link: "https://github.com/crust87/Android-VideoCropView/tree/exoplayer"
+	},
+	{
 		type: "Create",
 		name: "Android-ExoVideoView",
 		version: "1.0.0",
