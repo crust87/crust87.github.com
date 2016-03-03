@@ -1,6 +1,14 @@
 $logContents = [
 	{
 		type: "Update",
+		name: "Android-TextureVideoView",
+		version: "1.0.4",
+		date: "2016. 03. 03.",
+		content: "fix default ScaleType. there was crash if didn't add ScaleType in xml. and Add sound option, you can mute using setSound().",
+		link: "https://github.com/crust87/Android-TextureVideoView"
+	},
+	{
+		type: "Update",
 		name: "Android-VideoCropView(ExoPlayer)",
 		version: "1.3.1",
 		date: "2016. 03. 01.",
