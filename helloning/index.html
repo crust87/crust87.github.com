@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Helloning</title>
+<script src="script/jquery-2.1.3.min.js"></script>
+</head>
+<body>
+<script>
+$(function() {
+	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+		// Mobile start
+		location.href='helloning_mobile.html';
+		//location.href='helloning.html';
+	} else {
+		// PC start
+		location.href='helloning.html';
+	}
+});
+</script>
+</body>
+</html>

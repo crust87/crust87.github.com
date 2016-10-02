@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Helloning</title>
+<script src="script/jquery-2.1.3.min.js"></script>
+<script src="script/jQueryRotateCompressed.js"></script>
+<script src="script/jquery-ui.min.js"></script>
+<link href="style/helloning.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<div id="navigator-intro">
+		<div id="nav-content-intro">
+			<a href="#intro"><img style="float:left;" src="res/img/intro_helloning.png" /></a>
+			<div id="nav-intro">
+				<div><a href="#intro">INTRO</a></div>
+				<div><a href="#introduction-product">PRODUCT</a></div>
+				<div><a href="#introduction-download">DOWNLOAD</a></div>
+				<div><a href="#introduction-contact">CONTACT</a></div>
+				<div><a href="#introduction-member">MEMBER</a></div>
+			</div>
+		</div>
+	</div>
+	<div id="navigator">
+		<div id="nav-content">
+			<a href="#intro"><img style="float:left;" src="res/img/intro_helloning_over.png" /></a>
+			<div id="nav">
+				<div><a href="#intro">INTRO</a></div>
+				<div><a href="#introduction-product">PRODUCT</a></div>
+				<div><a href="#introduction-download">DOWNLOAD</a></div>
+				<div><a href="#introduction-contact">CONTACT</a></div>
+				<div><a href="#introduction-member">MEMBER</a></div>
+			</div>
+		</div>
+	</div>
+	
+	<div id="intro" style="z-index:1000">
+		<div id="intro-content">
+			<div id="intro-box">
+				<div  style="position:absolute;width:100%">
+					<img id="helloning-head" src="res/img/intro_logo.png" />
+				</div>
+				<div  style="position:absolute;width:100%">
+					<img src="res/img/intro_logo_face.png" />
+				</div>
+				<img id="helloning-text" style="opacity:0;" src="res/img/intro_text.png"/>
+			</div>
+			<div class="intro-image" id="intro-morning" style="background-image: url('res/img/intro_morning.png'); z-index:102;">
+			</div>
+		</div>
+	</div>
+
+	<div class="page" id="introduction-problem">
+		<div id="problem-content">
+			<div>
+				<h1>같은 화면, 같은 소리...<br/>당신의 아침, 어때요?</h1>
+				<h2>하루의 시작은 조금 더<br/>소중해야 하지 않을까요?</h2>
+			</div>
+			<img src="res/img/problem_phone.png">
+		</div>
+	</div>
+
+	<div class="page" id="introduction-clip">
+		<div id="clip-content">
+			<div id="clip-background-div">
+				<video id="clip-background" autoplay src="res/video/clipmovie_wide.mp4" type="video/mp4"></video>
+			</div>
+			<h2>원하는 모든 <b>미디어</b>로<br/>아침을 시작해보세요</h2>
+			<div id="clip-phone">
+				<img src="res/img/clip_phone.png" />
+			</div>
+			<div id="clip-player">
+				<video id="clip-screen" autoplay src="res/video/clipmovie_phone.mp4" type="video/mp4"></video>
+			</div>
+			<div id="clip-title">
+				<img src="res/img/clip_date.png"/>
+			</div>
+		</div>
+	</div>
+	
+	<div class="page" id="introduction-helloning">
+		<div id="helloning-content">
+			<img src="res/img/introduce_helloning.png">
+			<div>
+				<h1>매일매일 행복한 아침<br/>헬로닝</h1>
+				<h2>사랑스러운 알람이<br/>당신을 깨워줄꺼에요</h2>
+				<h4>헬로닝은 조금 더 행복한 아침을 위해<br/>일어나고 싶은 영상으로 나만의 알람을 만들고<br/>공유할 수 있는 <b>소셜 알람 미디어 서비스</b>입니다.</h4>
+			</div>
+		</div>
+	</div>
+	
+	<div class="page functions-page" id="introduction-product">
+		<div class="functions-background" id="background1" style="background-image : url('res/img/product_one_pic.jpg')">
+			<div class="functions-content">
+				<div>
+					<h1><b>원하는 알람</b>을<br/>검색해 보세요</h1>
+					<h4>이제 반복하지 마세요.<br>수없이 다양한 콘텐츠로<br>매일 새로운 아침을 맞이하세요.</h4>
+				</div>
+				<img src="res/img/product_one_phone.png"/>
+			</div>
+		</div>
+	</div>
+	
+	<div class="page functions-page">
+		<div class="functions-background" id="background2" style="background-image : url('res/img/product_two_pic.jpg')">
+			<div class="functions-content">
+				<div>
+					<h1>누구나 공유하는<br/><b>수많은 알람 미디어</b></h1>
+					<h4>누구나 전체 피드에서<br>매력적인 콘텐츠를 담아<br>알람으로 이용할 수 있어요.</h4>
+				</div>
+				<img src="res/img/product_two_phone.png"/>
+			</div>
+		</div>
+	</div>
+	
+	<div class="page functions-page">
+		<div class="functions-background" id="background3" style="background-image : url('res/img/product_three_pic.jpg')">
+			<div class="functions-content">
+				<div>
+					<h1><b>나만의 알람</b>을<br/>만들어 보세요</h1>
+					<h4>담고 싶은 영상을 직접 찍거나<br>다른 영상에서 가져와서<br>자신만의 알람을 만들어 보세요.</h4>
+				</div>
+				<img src="res/img/product_three_phone.png"/>
+			</div>
+		</div>
+	</div>
+	
+	<div class="page" id="introduction-feature">
+		<div id="feature-content" style="background-image : url('res/img/feature_pic.png')">
+			<h1>소셜 알람 미디어의 시작 <b>헬로닝</b></h1>
+			<div>
+				<div>
+					<img src="res/img/feature_one.png"/>
+					<p>취향 저격 알람을 찾아주는<br/><b>취향 분석 시스템</b></p>
+				</div>
+				<div style="margin-left:110px;">
+					<img src="res/img/feature_two.png"/>
+					<p>원하는 영상이 울리는<br/><b>맞춤형 미디어 알람</b></p>
+				</div>
+				<div style="margin-left:110px;">
+					<img src="res/img/feature_three.png"/>
+					<p>누구나 자유롭게 공유하는<br/><b>소셜 미디어</b></p>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="page" id="introduction-epilogue">
+		<div id="epilogue-content-holder">
+			<div id="epilogue-content">
+				<div id="review_list">
+					<h2 class="review"></h2>
+					<h2 class="review"></h2>
+					<h2 class="review"></h2>
+					<h2 class="review"></h2>
+				</div>
+				<div id="reviewer">
+					<div id="reviewer-img"><img src=""/></div>
+					<div id="reviewer-name"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="page" id="introduction-download">
+		<div id="download-content" style="background-image : url('res/img/download_pic.png')">
+			<div>
+				<img src="res/img/download_phone.png" />
+				<div>
+					<h1>내일은<br/><b>헬로닝</b>하세요</h1>
+					<h3>매일 행복하게 아침을 시작할 수 있도록<br/>헬로닝과 함께 하루의 시작을 바꿔보세요.</h3>
+					<a target="_blank" href="https://play.google.com/store/apps/details?id=com.fantasing.helloning"><img src="res/img/download_google.png"></a>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="page" id="introduction-contact">
+		<div id="contact-content">
+			<h2>당신의 의견은 항상 설레여요</h2>
+			<div>
+				<div id="contact-window">
+					<div style="position: absolute; z-index:99;margin-top: 100px; margin-left: 114px;" >
+						<img src="res/img/contact_helloning.png" />
+					</div>
+					<div style="position: absolute; z-index:99; margin-top: 286px;" >
+						<img src="res/img/contact_illust_front.png" />
+					</div>
+					<div style="position: absolute; z-index:100;">
+						<img src="res/img/contact_illust_window.png" />
+					</div>
+				</div>
+				<div id="contact-form">
+					<input id="form-email" type="text" placeholder="이메일"/>
+					<input id="form-name" type="text" placeholder="이름"/>
+					<textarea id="form-context" placeholder="하고 싶은 말을 적어주세요."></textarea>
+					<input type="button" id="form-submit" value="보내기"/>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="page" id="introduction-member">
+		<div id="member-content" style="text-align:center">
+			<h2>FANTASY + ING<br/><b>FANTASING</b></h2>
+			<h1>WE'RE CREATING<br/>FANTASY.</h1>
+			<h3>상상 속에선 세상 누구나 자유롭게 행복할 수 있습니다.<br/>우리는 한계없는 능독적 상상을 하고 이를 실현시키려 합니다.<br/>또한 우리는 그러한 상상이 꼭 실현될 수 있다고 믿습니다.<br/>그리고 그 시작은 작은 변화로부터 출발합니다.<br/></h3>
+			<div id="member-picture">
+				<img src="res/img/fantasing_1.png" />
+				<img class="picture-margin" src="res/img/fantasing_2.png" />
+				<img class="picture-margin" src="res/img/fantasing_3.png" />
+				<img class="picture-margin" src="res/img/fantasing_4.png" />
+				<img class="picture-margin" src="res/img/fantasing_5.png" />
+			</div>
+			<div id="member-copyright">
+				Copyright ©2015 <b>Fantasing.</b> All right reserved
+			</div>
+		</div>
+	</div>
+	
+	<script>
+	
+$(function() {
+	// variables
+	var epilogueText = ["“매력적인 컨텐츠를 통해서<br/>글로벌 시장 진출의 가능성이 엿보인다.”", "“매일 새로운 영상으로 맞이하는 아침,<br/>내일은 무엇을 선택할 지 항상 기대돼요!”", "“헬로닝을 한번도 안 쓴 사람은 있어도,<br/>한번만 쓴사람은 없을 것이라 확신합니다.”", "“매력적인 컨텐츠를 통해서<br/>글로벌 시장 진출의 가능성이 엿보인다.”", "“매일 새로운 영상으로 맞이하는 아침,<br/>내일은 무엇을 선택할 지 항상 기대돼요!”", "“헬로닝을 한번도 안 쓴 사람은 있어도,<br/>한번만 쓴사람은 없을 것이라 확신합니다.”"];
+	var reviewerImageList = ["epilogue_reviewer_1.png", "epilogue_reviewer_2.png", "epilogue_reviewer_3.png", "epilogue_reviewer_1.png", "epilogue_reviewer_2.png", "epilogue_reviewer_3.png"]
+	var reviewerNameList = ["시져스 파트너스 <b>권영준</b>", "파크히어 CMO <b>이성재</b>", "위시캣 CEO <b>박우범</b>", "시져스 파트너스 <b>권영준</b>", "파크히어 CMO <b>이성재</b>", "위시캣 CEO <b>박우범</b>"];
+	
+	// attributes;
+	// window
+	var windowHeight = $(window).height();
+	var windowWidth = $(window).width();
+	
+	// navigator
+	var navigator = $('#navigator');
+	var navHeight = 68;
+	var isShow = false;
+	navigator.css('opacity', "0");
+	
+	// intro
+	var ratio = (windowWidth / 1920);
+	var introHeight = windowHeight;
+	var introMargin = windowHeight - ratio * 1020;
+	var introDest = ratio * 370;
+	var backgroundDest = ratio * 3000;
+	
+	var intro = $('#intro');
+	var introContent = $('#intro-content');
+	var introImage = $('.intro-image');
+	var introBox = $('#intro-box');
+	var introLogo = $('#intro-logo');
+
+	var background1 = $('#background1');
+	var background2 = $('#background2');
+	var background3 = $('#background3');
+	
+	intro.height(introHeight);
+	introContent.height(introHeight);
+	introImage.height(introHeight - introMargin);
+	
+	introImage.css('margin-top', introMargin + 'px');
+
+	console.log((introImage.height() / 2) + " " + windowHeight + " " + introBox.height() + " " + (windowHeight - (introImage.height() / 2) - introBox.height()));
+	
+	$(window).resize(function() {
+		windowHeight = $(window).height();
+		windowWidth = $(window).width();
+		introHeight = windowHeight;
+		introMargin = windowHeight - (windowWidth / 1920) * 1020;
+		
+		intro.height(introHeight);
+		introContent.height(introHeight);
+		introImage.height(introHeight - introMargin);
+		introImage.css('margin-top', introMargin + 'px');
+	});
+
+	introBox.css("margin-top", windowHeight);
+	
+	$(window).load(function () {
+		introBox.animate(
+			{'margin-top' : (windowHeight - introBox.height()) /2 - introImage.height()/5}, 
+			{ 
+				duration: 1000, 
+				queue: true, 
+				complete: function() {
+					$('#helloning-text').animate({'opacity' : 1}, { duration: 1000, queue: true });
+				}
+			});
+    });
+	
+	// clip
+	var clipBack = false;
+	var clipScreen = false;
+	
+	// review
+	var nextReview = 3;
+	var nextReviewer = 1;
+	
+	// member
+	var isMemberShow = false;
+	
+	
+	// clip
+	var introductionClip = $('#introduction-clip');
+	
+	// epilogue
+	var reviewList = $("#review_list");
+	var review = $('.review');
+	var reviewer = $('#reviewer');
+	var reviewerImgae = $('#reviewer-img img');
+	var reviewerName = $('#reviewer-name');
+	
+	// download
+	var helloningBox = $("#helloning-box");
+	var helloningHead = $("#helloning-head");
+	
+	// member
+	var introductionMember = $('#introduction-member');
+	var memberPictures = $('#member-picture img');
+	
+	// init review
+	review.eq(0).html(epilogueText[2]);
+	review.eq(0).css("top", "-140px").css("opacity", "0.2").css("font-size", "26px").css("line-height", "30px");
+	review.eq(1).html(epilogueText[1]);
+	review.eq(1).css("top", "58px").css("opacity", "0.2").css("font-size", "26px").css("line-height", "30px");
+	review.eq(2).html(epilogueText[0]);
+	review.eq(2).css("top", "174px").css("opacity", "1").css("font-size", "40px").css("line-height", "46px");
+	review.eq(3).html(epilogueText[epilogueText.length - 1]);
+	review.eq(3).css("top", "433px").css("opacity", "0.2").css("font-size", "26px").css("line-height", "30px");
+	reviewerImgae.attr("src", "res/img/" + reviewerImageList[0]);
+	reviewerName.html(reviewerNameList[0]);
+	
+	// init member picture
+	for(var i = 0; i < 5; i++) {
+		memberPictures.eq(i).css("opacity", 0);
+	}
+	
+	$('#form-submit').click(function() {
+		var formEmail = $('#form-email').val();
+		var formName = $('#form-name').val();
+		var formContext = $('#form-context').val();
+		
+		$.ajax({
+		    url : "http://1.255.56.33:8000/index.php/user/opinionReceive",
+		    data : {
+		    	email: formEmail,
+		    	title: formName, 
+		    	context: formContext
+		    },
+		    dataType : "jsonp",
+		    jsonp : "callback",
+		    success: function(data) {
+		        if(data != null) {
+					if(data.result == "OK") {
+						alert("소중한 의견 감사드립니다.");
+						$('#form-email').val("");
+						$('#form-name').val("");
+						$('#form-context').val("");
+					}
+		        }
+		    }
+		});
+	});
+	
+	// set event of clip ended
+	$('#clip-background').on('ended', function() {
+		clipBack = true;
+		
+		if(clipBack && clipScreen) {
+			$('#clip-background').get(0).play();
+			$('#clip-screen').get(0).play();
+			clipBack = false;
+			clipScreen = false;
+		}
+	});
+	$('#clip-screen').on('ended', function() {
+		clipScreen = true;
+		
+		if(clipBack && clipScreen) {
+			$('#clip-background').get(0).play();
+			$('#clip-screen').get(0).play();
+			clipBack = false;
+			clipScreen = false;
+		}
+	});
+	
+	// change review text and image
+	setInterval(function() {
+		review = $('.review');
+		review.eq(0).animate({'top': '58px'}, 1000, "easeOutQuad");
+		review.eq(1).animate({'top': '174px', 'opacity' : '1', 'font-size' : '40px', 'line-height' : '46px'}, 1000, "easeOutQuad");
+		review.eq(2).animate({'top': '433px', 'opacity' : '0.2', 'font-size' : '26px', 'line-height' : '30px'}, 1000, "easeOutQuad");
+		review.eq(3).animate({'top': '660px'}, 1000, "easeOutQuad", 
+			function() {
+	        	var last = review.eq(3);
+	        	review.eq(3).remove();
+	        	last.css("top", "-140px");
+	        	last.html(epilogueText[nextReview]);
+	        	nextReview = (nextReview + 1) % epilogueText.length;
+	        	reviewList.prepend(last);
+	        });
+		reviewer.animate({'opacity': '0'}, 500, "easeOutExpo", function() {
+			reviewerImgae.attr("src", "res/img/" + reviewerImageList[nextReviewer]);
+			reviewerName.html(reviewerNameList[nextReviewer]);
+			nextReviewer = (nextReviewer + 1) % reviewerNameList.length;
+        	reviewer.animate({'opacity': '1'}, 500,"linear");
+        })
+	}, 3500);
+	
+	// rotate helloning logo
+	var angle = 0;
+	setInterval(function() {
+		angle += 0.3;
+		angle = angle % 360;
+		helloningHead.rotate(angle);
+	}, 10);
+	
+
+	var windowHeight = $(window).height();
+
+	// scroll evnet
+	$(window).scroll(function () {
+		var top = $(window).scrollTop();
+		
+		if(top <= introHeight) {
+			if(isShow) {
+				isShow = false;
+				navigator.animate({'opacity': '0'}, 150);
+				console.log("seen");
+			}
+		} else {
+			if(!isShow) {
+				isShow = true;
+				navigator.animate({'opacity': '1'}, 150);
+			}
+		}
+
+		var delta1 = top - 2340;
+		if(delta1 >= 0 && delta1/2 <= windowHeight) {
+			background1.css("background-position", "0% " + (100 - (delta1/windowHeight) * 100) + "%");
+		}
+
+		var delta2 = top - 3300;
+		if(delta2 >= 0 && delta2/2 <= windowHeight) {
+			background2.css("background-position", "0% " + (100 - (delta2/windowHeight) * 100) + "%");
+		}
+
+		var delta3 = top - 4260;
+		if(delta3 >= 0 && delta3/2 <= windowHeight) {
+			background3.css("background-position", "0% " + (100 - (delta3/windowHeight) * 100) + "%");
+		}
+
+		
+
+		// scroll event of download
+		var helloningDelta = top - 7400;
+		if(helloningDelta >= 0) {
+			if(helloningDelta < 0) {
+				helloningDelta = 0;
+			}
+			
+			if(helloningDelta > 320) {
+				helloningDelta = 320;
+			}
+			
+			helloningBox.css("margin-top", (75 - helloningDelta/8) + "px");
+		}
+		
+		// scroll event of member
+		var memberDelta = top - 7400;
+		if(memberDelta >= 0) {
+			introductionMember.css("background-position-y", 600 - memberDelta / 1.6 + "px");
+			
+			if(memberDelta >= 800 && !isMemberShow) {
+				isMemberShow = true;
+				showMember();
+			} 
+		}
+	});
+	
+	// click event for navigation
+	$('a[href*=#]:not([href=#])').click(function() {
+		if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+			var target = $(this.hash);
+			target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+			if (target.length) {
+				$('html,body').animate({
+					scrollTop: target.offset().top - navHeight
+				}, 1000);
+				return false;
+			}
+		}
+	});
+	
+	// show member picture
+	function showMember() {
+		 setTimeout(function() {
+			 memberPictures.animate({
+			        'margin-top': '0',
+			        'margin-bottom': '50px',
+			        'opacity': 1
+			        }, 'fast', function() {
+			});
+		 }, 100);
+	}
+});
+</script>
+</body>
+</html>
