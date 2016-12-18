@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>GBN</title>
+	<meta name="author" content="GBN" />
+	<meta name="description" content="Fuck You" />
+	<meta name="keywords"  content="GBN" />
+	<meta name="Resource-type" content="Document" />
+
+	<!--[if IE]>
+		<script type="text/javascript">
+			 var console = { log: function() {} };
+		</script>
+	<![endif]-->
+
+	<link rel="stylesheet" type="text/css" href="base.css" />
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.1.0/fullcalendar.min.js"></script>
+	
+
+	<link rel="stylesheet" type="text/css" href="http:////cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.1.0/fullcalendar.min.css" />
+	<link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.1.0/fullcalendar.print.css" />
+
+	<style>
+		#map {
+			height: 400px;
+			width: 100%;
+			margin: 0 auto;
+		}
+
+
+	#calendar {
+		max-width: 900px;
+		margin: 0 auto;
+	}
+
+
+    </style>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('#calendar').fullCalendar({
+		        header: {
+					left: 'prev,next today',
+					right: 'month,agendaWeek,agendaDay,listWeek'
+				},
+				navLinks: false, // can click day/week names to navigate views
+				editable: false,
+				eventLimit: false, // allow "more" link when too many events
+				events: [
+					{
+						title: 'All Day Event',
+						start: '2016-12-01'
+					},
+					{
+						title: 'Long Event',
+						start: '2016-12-07',
+						end: '2016-12-10'
+					},
+					{
+						id: 999,
+						title: 'Repeating Event',
+						start: '2016-12-09T16:00:00'
+					},
+					{
+						id: 999,
+						title: 'Repeating Event',
+						start: '2016-12-16T16:00:00'
+					},
+					{
+						title: 'Conference',
+						start: '2016-12-11',
+						end: '2016-12-13'
+					},
+					{
+						title: 'Meeting',
+						start: '2016-12-12T10:30:00',
+						end: '2016-12-12T12:30:00'
+					},
+					{
+						title: 'Lunch',
+						start: '2016-12-12T12:00:00'
+					},
+					{
+						title: 'Meeting',
+						start: '2016-12-12T14:30:00'
+					},
+					{
+						title: 'Happy Hour',
+						start: '2016-12-12T17:30:00'
+					},
+					{
+						title: 'Dinner',
+						start: '2016-12-12T20:00:00'
+					},
+					{
+						title: 'Birthday Party',
+						start: '2016-12-13T07:00:00'
+					},
+					{
+						title: 'Click for Google',
+						url: 'http://google.com/',
+						start: '2016-12-28'
+					}
+				]
+		    });	
+		});
+
+		function initMap() {
+
+			var gbn = {lat: 37.513706, lng: 126.896547};
+			var map = new google.maps.Map(document.getElementById('map'), {
+				zoom: 15,
+				center: gbn
+			});
+
+			var marker = new google.maps.Marker({
+				position: gbn,
+				map: map
+			});
+		}
+	</script>
+
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCCUyUk9llFelA4wu4YuIIj60pEWmFiOI0&callback=initMap"></script>
+</head>
+<body>
+
+<div class="wrap">
+	<div class="section">
+		<p>
+			토요일 - 40만원<br/>
+			금요일,일요일 - 35만원<br/><br/>
+
+			이용시간 총 7시간 (리허설+공연)<br/><br/>
+
+			추가 시간/요금 - 협의<br/>
+			010-9182-0749 / leeyuing@gmail.com 
+		</p>
+	</div>
+
+	<div class="section">
+		<h2>장비</h2>
+		<p>
+			CONSOL SYSTEM<br/>
+			Behringer SX2442<br/>
+			POWER AMP x3<br/>
+			Main Speaker x 2<br/>
+			Ataka - Aip-15 x2<br/>
+			Ataka - Dhw-312 x2 (모니터스피커)<br/>
+			SM57 X 6 / SM58 X 4<br/><br/>
+
+			DRUM<br/>
+			Tama Stage Star + 1more cymbal stand<br/>
+			Pearl Eliminator Pedal<br/>
+			Pearl Eliminator Twin Pedal<br/><br/>
+
+			GUITAR & BASS<br/>
+			Marshall JCM 2000 DSL (Marshall MF400 4x12 Cab)<br/>
+			Peavy 6505+ (Marshall 1960 4x12 Cab)<br/>
+			Marshall Valvestate 8100<br/>
+			Behringer BVT 4500h (LANEY BASS CAB)<br/>
+			Bugera 6262 120w
+		</p>
+	</div>
+
+	<div class="section">
+		<h2>Schedule</h2>
+		<div id='calendar'></div>
+	</div>
+
+	<div class="section">
+		<h2>Location</h2>
+		<div id="map"></div>
+	</div>
+</div>
+
+<div class="footer">
+
+	<div class="section">
+		<span style="display:block; float: left;">GBN</span>
+		<span style="display:block; float: right;">010-9182-0749 / leeyuing@gmail.com </span>
+	</div>
+</div>
+
+
+</body>
+</html>
