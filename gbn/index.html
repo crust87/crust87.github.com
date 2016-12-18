@@ -30,6 +30,12 @@
 	<link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.1.0/fullcalendar.print.css" />
 
 	<style>
+		#logo {
+			width: 50%;
+			margin: 0 auto;
+			display: block;
+		}
+
 		#map {
 			margin-left: 20px;
 			height: 450px;
@@ -74,11 +80,6 @@
 			});
 
 			$('#calendar').fullCalendar({
-		        header: {
-					left: 'prev,next today',
-					center: 'title',
-					right: 'month,agendaWeek,agendaDay,listWeek'
-				},
 				navLinks: false, // can click day/week names to navigate views
 				editable: false,
 				eventLimit: false, // allow "more" link when too many events
@@ -114,7 +115,7 @@
 
 <div class="wrap">
 	<div class="section">
-		<img src="image/logo.png" />
+		<img src="image/logo.png" id="logo" />
 		<p>
 			2016년 1월<br/>
 			서울, 문래동에 새로 오픈한<br/>
