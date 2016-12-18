@@ -48,6 +48,7 @@
 		// Initialize Firebase
 		var config = {
 		    apiKey: "AIzaSyCt8XaH9-kzFDGAnWfWBaQj0SeXYRklciI",
+		    authDomain: "gbn-livehouse.firebaseapp.com",
 		    databaseURL: "https://gbn-livehouse.firebaseio.com"
 		};
 		firebase.initializeApp(config);
@@ -60,6 +61,16 @@
 				$('#calendar').fullCalendar( 'addEventSource', events );
 			});
 
+			firebase.auth().onAuthStateChanged(function(user) {
+				if (user) {
+					$("#loginSection").hide();
+					$("#scheduleSection").show();
+				} else {
+					$("#loginSection").show();
+					$("#scheduleSection").hide();
+				}
+			});
+
 			$('#calendar').fullCalendar({
 		        header: {
 					left: 'prev,next today',
@@ -70,11 +81,36 @@
 				eventLimit: false, // allow "more" link when too many events
 		    });	
 
+			var inputEmail = $("#inputEmail");
+			var inputPassword = $("#inputPassword");
+
+			$("#buttonLogin").click(function() {
+				var email = inputEmail.val();
+				var password = inputPassword.val();
+
+				firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+					// Handle Errors here.
+					var errorCode = error.code;
+					var errorMessage = error.message;
+
+					consoloe.log(errorCode + " " + errorMessage);
+				});
+
+				inputEmail.val("");
+				inputPassword.val("");
+			});
+
+			$("#buttonLogout").click(function() {
+				firebase.auth().signOut().then(function() {
+				}, function(error) {
+				});
+			}
+
 		    var inputTitle = $("#inputTitle");
 			var inputStart = $("#inputStart");
 			var inputUrl = $("#inputUrl");
 
-			$("#inputSubmit").click(function() {
+			$("#buttonSubmit").click(function() {
 				var title = inputTitle.val();
 				var start = inputStart.val();
 				var url = inputUrl.val();
@@ -96,13 +132,24 @@
 
 <div class="wrap">
 
-	<div class="section">
-		<h2>Schedule ADD</h2>
+	<div class="section" id="loginSection">
+		<h2>Login</h2>
+		<p>
+			email: <input type="email" id="inputEmail" />
+			password: <input type="password" id="inputPassword" />
+			<input type="button" id="buttonLogin" value="login" />
+		</p>
+	</div>
+
+	<div class="section" id="scheduleSection">
+		<p>
+			<input type="button" id="buttonLogout" value="logout" />
+		</p>
 		<p>
 			title: <input type="text" id="inputTitle" />
 			start: <input type="text" id="inputStart" />
 			url: <input type="text" id="inputUrl" />
-			<input type="button" id="inputSubmit" value="submit" />
+			<input type="button" id="buttonSubmit" value="submit" />
 		</p>
 	</div>
 
