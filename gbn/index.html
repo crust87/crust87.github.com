@@ -30,16 +30,28 @@
 
 	<style>
 		#map {
-			height: 400px;
-			width: 100%;
-			margin: 0 auto;
+			margin-left: 20px;
+			height: 450px;
+			width: 450px;
+			float: left
+		}
+
+		#gate {
+			margin-left: 20px;
+			height: 450px;
+			width: 450px;
+			float: left;
+		}
+
+		.location {
+			height: 500px;
 		}
 
 
-	#calendar {
-		max-width: 900px;
-		margin: 0 auto;
-	}
+		#calendar {
+			max-width: 900px;
+			margin: 0 auto;
+		}
 
 
     </style>
@@ -53,13 +65,9 @@
 		firebase.initializeApp(config);
 
 		$(document).ready(function() {
-			firebase.database().ref('calendar').on('value', function(snapshot) {
+			firebase.database().ref('calendar').on('child_added', function(data) {
 				var events = [];
-
-				$.each(snapshot.val(), function(i, val) {
-					events.push(val);
-				});
-
+				events.push(data.val());
 
 				$('#calendar').fullCalendar( 'addEventSource', events );
 			});
@@ -97,9 +105,20 @@
 
 <div class="wrap">
 	<div class="section">
+		<img src="image/logo.png" style="width: 30%;"/>
+		<p>
+			2016년 1월<br/>
+			서울, 문래동에 새로 오픈한<br/>
+			한국에서 가장 시끄러운 공연장<br/>
+		</p>
+	</div>
+
+	<div class="section">
+		<h2>대관</h2>
 		<p>
 			토요일 - 40만원<br/>
-			금요일,일요일 - 35만원<br/><br/>
+			금요일, 일요일 - 35만원<br/>
+			평일 - 30만원<br/><br/>
 
 			이용시간 총 7시간 (리허설+공연)<br/><br/>
 
@@ -109,7 +128,7 @@
 	</div>
 
 	<div class="section">
-		<h2>장비</h2>
+		<h2>EQUIPMENT</h2>
 		<p>
 			CONSOL SYSTEM<br/>
 			Behringer SX2442<br/>
@@ -118,7 +137,7 @@
 			Ataka - Aip-15 x2<br/>
 			Ataka - Dhw-312 x2 (모니터스피커)<br/>
 			SM57 X 6 / SM58 X 4<br/><br/>
-
+			
 			DRUM<br/>
 			Tama Stage Star + 1more cymbal stand<br/>
 			Pearl Eliminator Pedal<br/>
@@ -129,7 +148,7 @@
 			Peavy 6505+ (Marshall 1960 4x12 Cab)<br/>
 			Marshall Valvestate 8100<br/>
 			Behringer BVT 4500h (LANEY BASS CAB)<br/>
-			Bugera 6262 120w
+			Bugera 6262 120<br/>
 		</p>
 	</div>
 
@@ -138,9 +157,12 @@
 		<div id='calendar'></div>
 	</div>
 
-	<div class="section">
+	<div class="section location">
 		<h2>Location</h2>
-		<div id="map"></div>
+		<p>
+			<div id="map"></div>
+			<img id="gate" src="image/gate.jpg" />
+		</p>
 	</div>
 </div>
 

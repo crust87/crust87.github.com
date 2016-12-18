@@ -53,13 +53,9 @@
 		firebase.initializeApp(config);
 
 		$(document).ready(function() {
-			firebase.database().ref('calendar').on('value', function(snapshot) {
+			firebase.database().ref('calendar').on('child_added', function(data) {
 				var events = [];
-
-				$.each(snapshot.val(), function(i, val) {
-					events.push(val);
-				});
-
+				events.push(data.val());
 
 				$('#calendar').fullCalendar( 'addEventSource', events );
 			});
