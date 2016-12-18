@@ -72,10 +72,6 @@ body{
 	color: #aaa;
 }
 
-.fc-toolbar.fc-header-toolbar {
-	height: 0;
-}
-
 h1{
 	font-size: 4em;
 }

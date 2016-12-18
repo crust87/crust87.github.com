@@ -75,6 +75,7 @@
 			$('#calendar').fullCalendar({
 		        header: {
 					left: 'prev,next today',
+					center: 'title',
 					right: 'month,agendaWeek,agendaDay,listWeek'
 				},
 				navLinks: false, // can click day/week names to navigate views
@@ -129,6 +130,14 @@
 
 			$("#inputStart").datepicker();
 			$("#inputStart").datepicker("option", "dateFormat", "yy-mm-dd");
+
+			$("#buttonPrev").click(function() {
+				$('#calendar').fullCalendar('prev');
+			});
+
+			$("#buttonNext").click(function() {
+				$('#calendar').fullCalendar('next');
+			});
 		});
 	</script>
 </head>
@@ -159,6 +168,8 @@
 
 	<div class="section">
 		<h2>Schedule</h2>
+		<input type="bytton" value="prev" id="buttonPrev">
+		<input type="bytton" value="next" id="buttonNext">
 		<div id='calendar'></div>
 	</div>
 

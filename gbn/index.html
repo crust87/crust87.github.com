@@ -83,6 +83,13 @@
 				eventLimit: false, // allow "more" link when too many events
 		    });		
 			
+			$("#buttonPrev").click(function() {
+				$('#calendar').fullCalendar('prev');
+			});
+
+			$("#buttonNext").click(function() {
+				$('#calendar').fullCalendar('next');
+			});
 		});
 
 		function initMap() {
@@ -155,6 +162,8 @@
 
 	<div class="section">
 		<h2>Schedule</h2>
+		<input type="bytton" value="prev" id="buttonPrev">
+		<input type="bytton" value="next" id="buttonNext">
 		<div id='calendar'></div>
 	</div>
 
