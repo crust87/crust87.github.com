@@ -72,64 +72,41 @@
 				navLinks: false, // can click day/week names to navigate views
 				editable: false,
 				eventLimit: false, // allow "more" link when too many events
-		    });		
-			
+		    });	
+
+		    var inputTitle = $("#inputTitle");
+			var inputStart = $("#inputStart");
+			var inputUrl = $("#inputUrl");
+
+			$("#inputSubmit").click(function() {
+				var title = inputTitle.val();
+				var start = inputStart.val();
+				var url = inputUrl.val();
+
+				firebase.database().ref('calendar').push().set({
+					title: title,
+					start: start,
+					url: url
+				});
+
+				inputTitle.val("");
+				inputStart.val("");
+				inputUrl.val("");
+			});
 		});
-
-		function initMap() {
-
-			var gbn = {lat: 37.513706, lng: 126.896547};
-			var map = new google.maps.Map(document.getElementById('map'), {
-				zoom: 15,
-				center: gbn
-			});
-
-			var marker = new google.maps.Marker({
-				position: gbn,
-				map: map
-			});
-		}
 	</script>
-
-	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyChcZ1p35vLO7V9sXyo5Pw93ULj3MHZTII&callback=initMap"></script>
 </head>
 <body>
 
 <div class="wrap">
-	<div class="section">
-		<p>
-			토요일 - 40만원<br/>
-			금요일,일요일 - 35만원<br/><br/>
-
-			이용시간 총 7시간 (리허설+공연)<br/><br/>
-
-			추가 시간/요금 - 협의<br/>
-			010-9182-0749 / leeyuing@gmail.com 
-		</p>
-	</div>
 
 	<div class="section">
-		<h2>장비</h2>
+		<h2>Schedule ADD</h2>
 		<p>
-			CONSOL SYSTEM<br/>
-			Behringer SX2442<br/>
-			POWER AMP x3<br/>
-			Main Speaker x 2<br/>
-			Ataka - Aip-15 x2<br/>
-			Ataka - Dhw-312 x2 (모니터스피커)<br/>
-			SM57 X 6 / SM58 X 4<br/><br/>
-
-			DRUM<br/>
-			Tama Stage Star + 1more cymbal stand<br/>
-			Pearl Eliminator Pedal<br/>
-			Pearl Eliminator Twin Pedal<br/><br/>
-
-			GUITAR & BASS<br/>
-			Marshall JCM 2000 DSL (Marshall MF400 4x12 Cab)<br/>
-			Peavy 6505+ (Marshall 1960 4x12 Cab)<br/>
-			Marshall Valvestate 8100<br/>
-			Behringer BVT 4500h (LANEY BASS CAB)<br/>
-			Bugera 6262 120w
+			title: <input type="text" id="inputTitle" />
+			start: <input type="text" id="inputStart" />
+			url: <input type="text" id="inputUrl" />
+			<input type="button" id="inputSubmit" value="submit" />
 		</p>
 	</div>
 
@@ -138,10 +115,6 @@
 		<div id='calendar'></div>
 	</div>
 
-	<div class="section">
-		<h2>Location</h2>
-		<div id="map"></div>
-	</div>
 </div>
 
 <div class="footer">
@@ -151,7 +124,6 @@
 		<span style="display:block; float: right;">010-9182-0749 / leeyuing@gmail.com </span>
 	</div>
 </div>
-
 
 </body>
 </html>
