@@ -30,17 +30,9 @@
 	<link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.1.0/fullcalendar.print.css" />
 
 	<style>
-		#map {
-			height: 400px;
-			width: 100%;
-			margin: 0 auto;
+		#calenderSection {
+			padding-bottom: 20px;
 		}
-
-
-	#calendar {
-		max-width: 900px;
-		margin: 0 auto;
-	}
 
 
     </style>
@@ -55,11 +47,17 @@
 		firebase.initializeApp(config);
 
 		$(document).ready(function() {
+			$("#loginSection").hide();
+			$("#scheduleSection").hide();
+
+			var calendar = $('#calendar');
+			var calendarHeaderTitle = $('#calendarHeaderTitle');
+
 			firebase.database().ref('calendar').on('child_added', function(data) {
 				var events = [];
 				events.push(data.val());
 
-				$('#calendar').fullCalendar( 'addEventSource', events );
+				calendar.fullCalendar( 'addEventSource', events );
 			});
 
 			firebase.auth().onAuthStateChanged(function(user) {
@@ -72,7 +70,12 @@
 				}
 			});
 
-			$('#calendar').fullCalendar({
+			calendar.fullCalendar({
+				header: {
+					left: '',
+					center: '',
+					right: ''
+				},
 				navLinks: false, // can click day/week names to navigate views
 				editable: false,
 				eventLimit: false, // allow "more" link when too many events
@@ -118,7 +121,8 @@
 					title: title,
 					start: start,
 					end: end,
-					url: url
+					url: url,
+					allDay: true
 				});
 
 				inputTitle.val("");
@@ -133,17 +137,26 @@
 			$("#inputEnd").datepicker("option", "dateFormat", "yy-mm-dd");
 
 			$("#buttonPrev").click(function() {
-				$('#calendar').fullCalendar('prev');
+				calendar.fullCalendar('prev');
+
+				var moment = $('#calendar').fullCalendar('getDate');
+				calendarHeaderTitle.html(moment.format("YYYY MMM"));
 			});
 
 			$("#buttonNext").click(function() {
-				$('#calendar').fullCalendar('next');
+				calendar.fullCalendar('next');
+
+				var moment = $('#calendar').fullCalendar('getDate');
+				calendarHeaderTitle.html(moment.format("YYYY MMM"));
 			});
+
+			var moment = $('#calendar').fullCalendar('getDate');
+			calendarHeaderTitle.html(moment.format("YYYY MMM"));
 		});
 	</script>
 </head>
 <body>
-
+<div class="wrapBackground">
 <div class="wrap">
 
 	<div class="section" id="loginSection">
@@ -168,13 +181,17 @@
 		</p>
 	</div>
 
-	<div class="section">
+	<div class="section" id="calenderSection">
 		<h2>Schedule</h2>
-		<input type="bytton" value="prev" id="buttonPrev">
-		<input type="bytton" value="next" id="buttonNext">
+		<div id="calendarHeader">
+			<h3 class="calendarHeaderButton" id="buttonPrev"><</h3>
+			<h3 id="calendarHeaderTitle"></h3>
+			<h3 class="calendarHeaderButton" id="buttonNext">></h3>
+		</div>
 		<div id='calendar'></div>
 	</div>
 
+</div>
 </div>
 
 <div class="footer">
