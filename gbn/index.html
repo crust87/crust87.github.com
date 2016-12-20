@@ -100,7 +100,14 @@
 				navLinks: false, // can click day/week names to navigate views
 				editable: false,
 				eventLimit: false, // allow "more" link when too many events
-		    });		
+				eventClick: function(event) {
+					if (event.url) {
+						window.open(event.url, '_blank');
+
+						return false;
+					}
+				}
+			});
 			
 			$("#buttonPrev").click(function() {
 				calendar.fullCalendar('prev');
